@@ -1,0 +1,17 @@
+<h2>Items to Grab!</h2>
+<div class="row">
+  <div class="item_cont col-sm-3" *ngFor="let i of itemData" id="{{i.id}}" (click)="grabNow($event)">
+    <div class="placeholder">
+      <img src="{{i.path}}">
+      <div class="item_make desc">
+        <strong>{{i.make}}&nbsp;&nbsp;{{i.name}}</strong>
+      </div>
+      <div class="item_rate desc">
+        <strong>Rs.{{i.rate}}</strong>
+      </div>
+      <div class="desc">
+        <button class="btn btn-warning" (click)="grabNow($event)">Grab now</button>
+      </div>
+    </div>
+  </div>
+</div>

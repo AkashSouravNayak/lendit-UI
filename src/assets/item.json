@@ -1,0 +1,115 @@
+{
+	"items": [{
+			"id": "IT01",
+			"name": "Air conditioner",
+			"make": "Toshiba",
+			"rate": "250/day",
+			"path": "../../assets/ac.jpg"
+		},
+		{
+			"id": "IT02",
+			"name": "Barbeque Stall",
+			"make": "Local",
+			"rate": "50/day",
+			"path": "../../assets/bbqStall.png"
+		},
+		{
+			"id": "IT03",
+			"name": "Bicycle",
+			"make": "Btwin",
+			"rate": "30/day",
+			"path": "../../assets/btwin.jpg"
+		},
+		{
+			"id": "IT04",
+			"name": "Air Cooler",
+			"make": "Symphony",
+			"rate": "50/day",
+			"path": "../../assets/cooler.jpg"
+		},
+		{
+			"id": "IT05",
+			"name": "DSLR",
+			"make": "Canon",
+			"rate": "200/day",
+			"path": "../../assets/camera.jpg"
+		},
+		{
+			"id": "IT06",
+			"name": "Laptop",
+			"make": "Lenovo",
+			"rate": "75/day",
+			"path": "../../assets/laptop.jpg"
+		},
+		{
+			"id": "IT07",
+			"name": "Biking Gear",
+			"make": "Local",
+			"rate": "50/day",
+			"path": "../../assets/fullGear.jpg"
+		},
+		{
+			"id": "IT08",
+			"name": "Helmet",
+			"make": "Vega",
+			"rate": "30/day",
+			"path": "../../assets/helmet.jpg"
+		},
+		{
+			"id": "IT09",
+			"name": "Induction",
+			"make": "Philips",
+			"rate": "60/day",
+			"path": "../../assets/induction.png"
+		},
+		{
+			"id": "IT10",
+			"name": "Riding Jacket",
+			"make": "Rynox",
+			"rate": "175/day",
+			"path": "../../assets/jacket.jpeg"
+		},
+		{
+			"id": "IT11",
+			"name": "Mixer",
+			"make": "Maharaja",
+			"rate": "35/day",
+			"path": "../../assets/mixer.jpg"
+		},
+		{
+			"id": "IT12",
+			"name": "R15 Bike",
+			"make": "Yamaha",
+			"rate": "450/day",
+			"path": "../../assets/r15.png"
+		},
+		{
+			"id": "IT13",
+			"name": "Wrist Watch",
+			"make": "Rolex",
+			"rate": "500/day",
+			"path": "../../assets/rolexwatch.jpg"
+		},
+		{
+			"id": "IT14",
+			"name": "Rucksack",
+			"make": "Wildcraft",
+			"rate": "80/day",
+			"path": "../../assets/rucksack.jpg"
+		},
+		{
+			"id": "IT15",
+			"name": "Trekking Stick",
+			"make": "Wildcraft",
+			"rate": "50/day",
+			"path": "../../assets/trekstick.png"
+		},
+		{
+			"id": "IT16",
+			"name": "Trekking Shoes",
+			"make": "Wildcraft",
+			"rate": "40/day",
+			"path": "../../assets/trekshoe.jpg"
+		}
+	]
+}
