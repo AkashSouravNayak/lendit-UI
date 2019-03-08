@@ -1,0 +1,53 @@
+.lendit_signup_main {
+    height: calc(100vh - 80px);
+    justify-content: center;
+    align-items: center;
+    .lendit_signup_cont{
+        text-align: center;
+        h4 {
+            padding-bottom: 32px;
+            text-align: left;
+        }
+        .lendit_signup {
+            width: 614px;
+            padding: 24px 24px 32px;
+            border-radius: 4px;
+            padding: 24px;
+            border-radius: 4px;
+            background-color: #f6f6f6;
+            border: 1px solid #f2f2f2;
+            .signup__formDetails {
+                &:nth-child(odd) {
+                    margin-right: 12px;
+                }
+                display: inline-block;
+                position: relative;
+                label {
+                    display: block;
+                    text-align: left;
+                    margin: 0;
+                    color: #7f8fa4;
+                    margin-top: 5px;            
+                }
+                input {
+                    padding: 7px 28px 7px 12px;
+                    outline: 0;
+                    width: 275px;
+                    border-radius: 4px;
+                    border: 1px solid rgba(0,0,0,.1);
+                    margin: 4px auto 16px;
+                }
+                .errorValidator {
+                    border: 1px solid #ed1c24;
+                }
+                h2.reg12 {
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    color: #ed1c24;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}

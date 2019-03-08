@@ -1,0 +1,26 @@
+<div class="lendit_login_main row">
+  <div class="lendit_login_cont">
+    <div class="lendit_login">
+      <h4>Sign in</h4>
+      <form [formGroup]="signinForm" (ngSubmit)="addSignin(signinForm.value)">
+        <div class="signin__formDetails">
+          <label class="semi14">Email ID</label>
+          <input class="reg14" [ngClass]="{'errorValidator': !signinForm.controls['email'].valid && signinForm.controls['email'].touched || notValid}"
+            type="email" formControlName="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+            placeholder="Enter your email id">
+          <h2 class="reg12" *ngIf="!signinForm.controls['email'].valid && signinForm.controls['email'].touched">*Please
+            enter valid email id</h2>
+        </div>
+        <div class="signin__formDetails">
+          <label class="semi14">Password</label>
+          <input class="reg14" [ngClass]="{'errorValidator': !signinForm.controls['password'].valid && signinForm.controls['password'].touched || notValid}"
+            type="password" formControlName="password" placeholder="Enter the password">
+            <h2 class="reg12-light errorText" *ngIf="notValid">Invalid password/Email</h2>
+        </div>
+        <div class="signin__container--formButton">
+          <button type="submit" class="button" [disabled]="!signinForm.valid">Sign In</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

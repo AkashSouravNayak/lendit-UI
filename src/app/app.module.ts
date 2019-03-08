@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { GeneralService } from '../general.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,11 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SubmitItemComponent } from './submit-item/submit-item.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { HistoryComponent } from './history/history.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,19 @@ import { SubmitItemComponent } from './submit-item/submit-item.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SubmitItemComponent
+    SubmitItemComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    SignUpComponent,
+    HistoryComponent,
+    ItemDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]
