@@ -43,7 +43,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
     TabsModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({toastClass: 'toast toast-bootstrap-compatibility-fix'})
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]

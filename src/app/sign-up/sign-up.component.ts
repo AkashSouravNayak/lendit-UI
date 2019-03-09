@@ -58,12 +58,12 @@ export class SignUpComponent implements OnInit {
     this.gs.register(obj).subscribe( res=> {
       this.toastr.success('successfully register, Please verify your email id')
     }, e=> {
-      console.log(e['error']['success']['subErrors'][0]['message']);
+      console.log(e['error']['error']['subErrors'][0]['message']);
       debugger;
-      if(e['error']['success']['message'] == 'Validation error') {
-        this.toastr.error(e['error']['success']['subErrors'][0]['message'], 'Major Error', {
-          timeOut: 3000
-        })
+      if(e['error']['error']['message'] == 'Validation error') {
+        this.toastr.error(e['error']['error']['subErrors'][0]['message'])
+      } else {
+        this.toastr.error(e['error']['error']['subErrors'][0]['message'])
       }
     })
   }
