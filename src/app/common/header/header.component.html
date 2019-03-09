@@ -1,7 +1,7 @@
 <header class="row">
-  <ul class="container">
+  <ul class="container main">
     <li class="item comp">
-      <a>LendIT</a>
+      <a>LendiT</a>
     </li>
     <li class="item">
       <a href="">Home</a>
@@ -9,16 +9,27 @@
     <li class="item">
       <a>About us</a>
     </li>
+    <li class="item user" *ngIf="ifLogin">
+      <i class="fa fa-user-circle" aria-hidden="true" (click)="showUserActions($event)"></i>
+      <div class="user_actions" *ngIf="showUserAction">
+        <ul>
+          <li (click)="logout()">Sign Out</li>
+          <li (click)="goToHistory()">History</li>
+        </ul>
+      </div>
+    </li>
     <li class="item lend">
       <i class="fa fa-money" aria-hidden="true"></i>
       <a href="/submit_item">Lend</a>
     </li>
-    <li class="item notify">
-      <i class="fa fa-bell-o" aria-hidden="true"></i>
+    <li class="item notify" *ngIf="ifLogin">
+      <i class="fa fa-bell-o" aria-hidden="true" (click)="openNotifications($event)"></i>
       <div class="notify_count">
-        
+        1
       </div>
-      <div class="notify_cont"></div>
+      <div class="notify_cont" *ngIf="showNotify">
+        <p (mouseout)="showNotify=false">Your item IT01 has got a bid!</p>
+      </div>
     </li>
     <li class="item">
       <a href="/login">Sign in</a>
