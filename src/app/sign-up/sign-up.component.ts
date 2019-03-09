@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { GeneralService } from 'src/general.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private gs: GeneralService, private toastr: ToastrService) { 
     this.signupForm = fb.group({
       firstName: [
         null,
@@ -40,6 +42,30 @@ export class SignUpComponent implements OnInit {
       // }
     });
   }
-  addSignup(value) {}
+  addSignup(value) {
+    debugger;
+    var obj = {
+      "address1": value.address1,
+      "address2": value.address2,
+      "cityName": "Bengaluru",
+      "email": value.email,
+      "firstName": value.firstName,
+      "lastName": value.lastname,
+      "mobile": value.mobile,
+      "password": value.password,
+      "pinCode": "560099"
+    }
+    this.gs.register(obj).subscribe( res=> {
+      this.toastr.success('successfully register, Please verify your email id')
+    }, e=> {
+      console.log(e['error']['success']['subErrors'][0]['message']);
+      debugger;
+      if(e['error']['success']['message'] == 'Validation error') {
+        this.toastr.error(e['error']['success']['subErrors'][0]['message'], 'Major Error', {
+          timeOut: 3000
+        })
+      }
+    })
+  }
 
 }

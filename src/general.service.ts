@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 
 export class GeneralService {
-   private url = 'localhost://10.177.7.5/api'
+   private url = 'http://localhost:8090/api/'
     constructor(private http: HttpClient) { }
  
     getAdvantageData() {
@@ -14,7 +14,11 @@ export class GeneralService {
        return this.http.get(apiUrl);
     }  
 
-   //  register() {
-   //    return this.http.post('')
-   //  }
+    register(obj) {
+       const headers = new HttpHeaders();
+       headers.append('Content-Type', 'application/json')
+      return this.http.post(this.url+'user/register-user', obj, {
+         headers: headers
+      })
+    }
  }

@@ -43,13 +43,13 @@
         <div class="signup__formDetails">
           <label class="semi14">Address Line 1</label>
           <input class="reg14" [ngClass]="{'errorValidator': signupForm.controls['address1'].value != signupForm.controls['address1'].value && signupForm.controls['address1'].dirty}"
-            type="text" formControlName="address" placeholder="Enter address">
+            type="text" formControlName="address1" placeholder="Enter address">
           <h2 class="reg12" *ngIf="signupForm.controls['address1'].value != signupForm.controls['address1'].value && signupForm.controls['address1'].dirty">Min 3 characters</h2>
         </div>
         <div class="signup__formDetails">
           <label class="semi14">Address Line 2</label>
           <input class="reg14" [ngClass]="{'errorValidator': signupForm.controls['address2'].value != signupForm.controls['address2'].value && signupForm.controls['address2'].dirty}"
-            type="text" formControlName="address" placeholder="Enter address">
+            type="text" formControlName="address2" placeholder="Enter address">
           <h2 class="reg12" *ngIf="signupForm.controls['address2'].value != signupForm.controls['address2'].value && signupForm.controls['address2'].dirty">Min 3 characters</h2>
         </div>
         <div class="signup__formButton">
