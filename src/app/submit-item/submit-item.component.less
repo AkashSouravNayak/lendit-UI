@@ -1,0 +1,36 @@
+.submit_item_cont {
+    height: calc(100vh - 80px);
+    padding: 25px;
+    .submit_item_image {
+        border: 2px solid #d3d3d3;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        i {
+            font-size: 150px;
+            cursor: pointer;
+        }
+    }
+    .submit_item_details {
+        padding: 25px;
+        & > div {
+            padding: 10px;
+        }
+        label {
+            width: 200px;
+        }
+        .bidding {
+            input[type="checkbox"] {
+                margin-left: 10px;
+            }
+            input[type="number"] {
+                margin-right: 15px;
+                width: 200px;
+            }
+        }
+        button {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+    }
+}

@@ -1,3 +1,45 @@
-<p>
-  submit-item works!
-</p>
+<div class="submit_item_cont row">
+  <div class="submit_item_image col-lg-6">
+    <i class="fa fa-plus-circle" aria-hidden="true" (click)="uploadImage($event)"></i>
+  </div>
+  <div class="submit_item_details col-lg-6">
+    <div class="category">
+      <label for=""><strong>Select Category:</strong></label>
+      <select name="category" id="">
+        <option value="1">Electronic & Appliances</option>
+        <option value="2">Mobiles & Tablet</option>
+        <option value="3">Bikes</option>
+        <option value="4">Clothing</option>
+      </select>
+    </div>
+    <div class="item_name">
+      <label for=""><strong>Item Name:</strong></label>
+      <input type="text" placeholder="Enter item name">
+    </div>
+    <div class="item_make">
+      <label for=""><strong>Item Manufacturer:</strong></label>
+      <input type="text" placeholder="Enter manufacturer">
+    </div>
+    <div class="datepicker">
+      <label for=""><strong>Select Date Range:</strong>
+      </label>
+      <input class="form-control" placeholder="Select date range" bsDaterangepicker #dpr="bsDaterangepicker">
+    </div>
+    <div class="item_price">
+      <label for=""><strong>Price:</strong></label>
+      <input type="number" placeholder="Enter price"> /- per day!
+    </div>
+    <div class="bidding">
+      <label class="container"><strong>Allow Bidding?</strong>
+        <input type="checkbox">
+      </label>
+      <div>
+          <input type="number" placeholder="Enter minimum bid price">
+          <input type="number" placeholder="Enter Maximum bid price">
+      </div>
+    </div>
+    <button class="btn btn-success">
+      Submit item
+    </button>
+  </div>
+</div>

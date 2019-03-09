@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { GeneralService } from '../general.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +37,9 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BsDatepickerModule.forRoot(),
+    TabsModule.forRoot()
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]
