@@ -6,11 +6,15 @@ import { map } from 'rxjs/operators';
 @Injectable()
 
 export class GeneralService {
-
+   private url = 'localhost://10.177.7.5/api'
     constructor(private http: HttpClient) { }
  
-    getAdvantageData(){
+    getAdvantageData() {
        let apiUrl = './assets/item.json';
        return this.http.get(apiUrl);
     }  
+
+   //  register() {
+   //    return this.http.post('')
+   //  }
  }
