@@ -31,6 +31,14 @@ export class GeneralService {
       });
    }
 
+   logout() {
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json')
+      return this.http.post(this.url + 'auth/logout', {
+         headers: headers
+      });
+   }
+
    getCategories() {
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json')
@@ -43,6 +51,22 @@ export class GeneralService {
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json')
       return this.http.post(this.url + 'items/get-all-items', obj, {
+         headers: headers
+      });
+   }
+
+   submitItem(obj) {
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json')
+      return this.http.post(this.url + 'items/new', obj, {
+         headers: headers
+      });
+   }
+
+   getListedItem() {
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json')
+      return this.http.get(this.url + 'items/item-history/'+parseInt(localStorage.getItem('userID')), {
          headers: headers
       });
    }

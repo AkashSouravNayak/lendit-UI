@@ -7,40 +7,41 @@
   <div class="submit_item_details col-lg-6">
     <div class="category">
       <label for=""><strong>Select Category:</strong></label>
-      <select name="category" id="">
-        <option value="1">Electronic & Appliances</option>
-        <option value="2">Mobiles & Tablet</option>
-        <option value="3">Bikes</option>
-        <option value="4">Clothing</option>
+      <select name="category" [(ngModel)]="selectedCategory">
+        <option *ngFor="let o of categories" value="{{o.id}}">{{o.categoryName}}</option>
       </select>
     </div>
     <div class="item_name">
       <label for=""><strong>Item Name:</strong></label>
-      <input type="text" placeholder="Enter item name">
+      <input type="text" placeholder="Enter item name" [(ngModel)]="itemName">
     </div>
     <div class="item_make">
       <label for=""><strong>Item Manufacturer:</strong></label>
-      <input type="text" placeholder="Enter manufacturer">
+      <input type="text" placeholder="Enter manufacturer" [(ngModel)]="itemManufacturer">
     </div>
     <div class="datepicker">
       <label for=""><strong>Select Date Range:</strong>
       </label>
-      <input class="form-control" placeholder="Select date range" bsDaterangepicker #dpr="bsDaterangepicker">
+      <input class="form-control" placeholder="Select date range" bsDaterangepicker #dpr="bsDaterangepicker" [(ngModel)]="datePicker">
     </div>
     <div class="item_price">
       <label for=""><strong>Price:</strong></label>
-      <input type="number" placeholder="Enter price"> /- per day!
+      <input type="number" placeholder="Enter price" [(ngModel)]="itemPrice"> /- per day!
+    </div>
+    <div class="item_pickup">
+        <label for=""><strong>Item Location:</strong></label>
+        <input type="text" placeholder="Enter address" [(ngModel)]="itemLocation">
     </div>
     <div class="bidding">
       <label class="container"><strong>Allow Bidding?</strong>
-        <input type="checkbox">
+        <input type="checkbox" (click)="bidPermission($event)">
       </label>
-      <div>
-          <input type="number" placeholder="Enter minimum bid price">
-          <input type="number" placeholder="Enter Maximum bid price">
+      <div *ngIf="showPricing">
+          <input type="number" placeholder="Enter minimum bid price" [(ngModel)]="minPrice">
+          <input type="number" placeholder="Enter Maximum bid price" [(ngModel)]="maxPrice">
       </div>
     </div>
-    <button class="btn btn-success">
+    <button class="btn btn-success" (click)="submitItem()">
       Submit item
     </button>
   </div>

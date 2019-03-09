@@ -31,8 +31,9 @@ export class LoginComponent implements OnInit {
         password: value.password
     }
     this.gs.login(obj).subscribe(res=> {
+      debugger;
       localStorage.setItem('aToken', res['X-TOKEN']);
-      localStorage.setItem('userID', res['userId']);
+      localStorage.setItem('userID', res['authenticatedUser']['userId']);
       this.router.navigate(['/','home']);
       this.toastr.success('Login Successfull!');
     }, e=> {
