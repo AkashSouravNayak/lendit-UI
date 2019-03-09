@@ -1,16 +1,46 @@
-<h2>Items to Grab!</h2>
+<div class="row sub_head">
+    <h2>Items to Grab!</h2>
+    <div class="sort">
+        <label for=""><strong>Sort by:</strong></label>
+        <select name="sort" id="">
+          <option value="Price: High to Low">Price: High to Low</option>
+          <option value="Price: Low to High">Price: Low to High</option>
+          <option value="Recent">Recent</option>
+          <option value="Older">Older</option>
+        </select>
+    </div>
+</div>
 <div class="row">
-  <div class="item_cont col-sm-3" *ngFor="let i of itemData" id="{{i.id}}" (click)="grabNow($event)">
-    <div class="placeholder">
-      <img src="{{i.path}}">
-      <div class="item_make desc">
-        <strong>{{i.make}}&nbsp;&nbsp;{{i.name}}</strong>
+  <div class="col-lg-2 left-sec">
+    <div class="row">
+      <div class="col-lg-12 filter">
+        <h4>Filter by:</h4>
+        <ul>
+          <li>Home Applicances</li>
+          <li>Mobiles & Accessories</li>
+          <li>Vehicles</li>
+        </ul>
+        <!-- <h6>Home Applicances</h6>
+        <h6>Mobiles & Accessories</h6>
+        <h6>Vehicles</h6> -->
       </div>
-      <div class="item_rate desc">
-        <strong>Rs.{{i.rate}}</strong>
-      </div>
-      <div class="desc">
-        <button class="btn btn-warning" id="{{i.id}}" (click)="grabNow($event)">Grab now</button>
+    </div>
+  </div>
+  <div class="col-lg-10 right-sec">
+    <div class="row">
+      <div class="item_cont col-sm-3" *ngFor="let i of itemData" id="{{i.id}}" (click)="grabNow($event)">
+        <div class="placeholder">
+          <img src="{{i.path}}">
+          <div class="item_make desc">
+            <strong>{{i.make}}&nbsp;&nbsp;{{i.name}}</strong>
+          </div>
+          <div class="item_rate desc">
+            <strong>Rs.{{i.rate}}</strong>
+          </div>
+          <div class="desc">
+            <button class="btn btn-warning" id="{{i.id}}" (click)="grabNow($event)">Grab now</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

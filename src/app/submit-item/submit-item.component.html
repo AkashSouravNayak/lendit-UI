@@ -1,6 +1,8 @@
 <div class="submit_item_cont row">
   <div class="submit_item_image col-lg-6">
-    <i class="fa fa-plus-circle" aria-hidden="true" (click)="uploadImage($event)"></i>
+    <input type="file" id="fileInput" name="fileInput" accept="image/*" (change)="previewFile($event)" #fileInput/>
+    <i class="fa fa-plus-circle" aria-hidden="true" (click)="uploadImage($event)" *ngIf="hidePlus"></i>
+    <img src="" id="preview" alt="" *ngIf="showImg" #preview>
   </div>
   <div class="submit_item_details col-lg-6">
     <div class="category">
