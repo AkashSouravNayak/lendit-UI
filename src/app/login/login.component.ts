@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
       this.cookieService.set( 'JSESSIONID', res['JSESSIONID'], now, '/','10.177.7.5');
       this.cookieService.set( 'XSRF-TOKEN', res['X-TOKEN']);
       this.router.navigate(['/','home']);
+      this.gs.setNavBarState(false);
       this.toastr.success('Login Successfull!');
     }, e=> {
       this.toastr.error('Invalid Credentials!')

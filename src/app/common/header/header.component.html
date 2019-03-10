@@ -9,7 +9,7 @@
     <li class="item">
       <a>About us</a>
     </li>
-    <li class="item user" *ngIf="ifLogin">
+    <li class="item user" *ngIf="!ifLogout">
       <i class="fa fa-user-circle" aria-hidden="true" (click)="showUserActions($event)"></i>
       <div class="user_actions" *ngIf="showUserAction">
         <ul>
@@ -31,7 +31,7 @@
         <p (mouseout)="showNotify=false">Your item IT01 has got a bid!</p>
       </div>
     </li>
-    <li class="item">
+    <li class="item" *ngIf="ifLogout">
       <a href="/login">Sign in</a>
     </li>
   </ul>

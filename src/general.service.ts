@@ -7,7 +7,11 @@ import { LoginComponent } from './app/login/login.component';
 @Injectable()
 
 export class GeneralService {
-   private url = 'http://10.177.7.5:8090/api/'
+   private url = 'http://10.177.7.5:8090/api/';
+   private navStateSource = new Subject<boolean>();
+   private logoutSource = new Subject<boolean>();
+   logoutState$ = this.logoutSource.asObservable();
+   navState$ = this.navStateSource.asObservable();
    constructor(private http: HttpClient) { }
 
    getAdvantageData() {
@@ -66,9 +70,13 @@ export class GeneralService {
    getListedItem() {
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json')
-      return this.http.get(this.url + 'items/item-submit-history/'+localStorage.getItem('userID'), {
+      return this.http.get(this.url + 'items/item-submit-history/' + localStorage.getItem('userID'), {
          headers: headers,
          withCredentials: true
       });
+   }
+
+   setNavBarState(state: boolean) {
+      this.navStateSource.next(state);
    }
 }
