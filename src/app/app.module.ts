@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ToastrModule } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +46,7 @@ import { ItemDetailsComponent } from './item-details/item-details.component';
     TabsModule.forRoot(),
     ToastrModule.forRoot({toastClass: 'toast toast-bootstrap-compatibility-fix'})
   ],
-  providers: [GeneralService],
+  providers: [GeneralService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

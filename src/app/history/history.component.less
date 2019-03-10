@@ -1,4 +1,43 @@
 .history_cont {
     justify-content: center;
     padding: 25px;
+
+    tabset {
+        width: 100%;
+    }
+    .item_purchased,
+    .item_cont {
+        margin-top: 20px;
+    }
+}
+.item_cont {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    img {
+        width: 100px;
+        height: 100px;
+    }
+    .placeholder {
+        position: relative;
+        border: 1px solid #d3d3d3;
+        padding:20px;
+        .desc {
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        button {
+            color: #000000;
+            font-weight: bolder;
+        }
+        .bidding {
+            position: absolute;
+            background-color: greenyellow;
+            color: #010101;
+            top: 5px;
+            left: -5px;
+            font-size: 12px;
+            padding: 5px;
+        }
+    }
 }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GeneralService } from 'src/general.service';
 import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   signinForm: FormGroup;
   email = '[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}';
   notValid = false;
-  constructor(private fb: FormBuilder, private gs: GeneralService, private toastr: ToastrService,  private router: Router) {
+  constructor( private cookieService: CookieService, private fb: FormBuilder, private gs: GeneralService, private toastr: ToastrService,  private router: Router) {
     this.signinForm = fb.group({
       email: [
         null,
@@ -32,8 +33,16 @@ export class LoginComponent implements OnInit {
     }
     this.gs.login(obj).subscribe(res=> {
       debugger;
+      var now = new Date();
+      var time = now.getTime();
+      time += 3600 * 1000;
+      now.setTime(time);
+      now.toUTCString();
+      // var a = now.toString();
       localStorage.setItem('aToken', res['X-TOKEN']);
       localStorage.setItem('userID', res['authenticatedUser']['userId']);
+      this.cookieService.set( 'JSESSIONID', res['JSESSIONID'], now, '/','10.177.7.5');
+      this.cookieService.set( 'XSRF-TOKEN', res['X-TOKEN']);
       this.router.navigate(['/','home']);
       this.toastr.success('Login Successfull!');
     }, e=> {

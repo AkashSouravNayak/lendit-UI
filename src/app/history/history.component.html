@@ -2,7 +2,24 @@
   <tabset type="pills col-lg-12">
     <tab heading="My Listed Items">
       <div class="item_listed row">
-
+        <div class="item_cont col-lg-3" *ngFor="let d of listedItems">
+          <div class="placeholder">
+            <!-- <div class="bidding" *ngIf="i.beedingType == true">
+              <strong>Bidding Eligible!</strong>
+            </div> -->
+            <img src="{{d.pictures}}">
+            <div class="item_make desc">
+              <strong>{{d.manufacturer}}&nbsp;&nbsp;{{d.itemName}}</strong>
+            </div>
+            <div class="item_rate desc">
+              <strong>Rs.{{d.flatPrice}}</strong>
+            </div>
+            <!-- <div class="item_rate desc" *ngIf="i.beedingType == true">
+              <strong>Min Bid: Rs.{{d.minPrice}}</strong>&nbsp;&nbsp;
+              <strong>Max Bid: Rs.{{d.maxPrice}}</strong>
+            </div> -->
+          </div>
+        </div>
       </div>
     </tab>
     <tab heading="My Purchase History">

@@ -66,8 +66,9 @@ export class GeneralService {
    getListedItem() {
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json')
-      return this.http.get(this.url + 'items/item-history/'+parseInt(localStorage.getItem('userID')), {
-         headers: headers
+      return this.http.get(this.url + 'items/item-submit-history/'+localStorage.getItem('userID'), {
+         headers: headers,
+         withCredentials: true
       });
    }
 }
